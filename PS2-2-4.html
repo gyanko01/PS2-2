@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Problem Set 2-2 More Javascript</title>
+    </head>
+
+    <body>
+        <h1>PS2-2-4</h1>
+        <form name="form1">
+            <label>User's Name:</label>
+            <input type="text" name="txt1" id="txt1">
+            <br/><br/>
+            <input type="button" value="Hello" name="btn1" id="btn1">
+            <input type="button" value="Good Bye" name="btn2"id="btn2">
+            <input type="button" value="Greetings" name="btn3" id="btn3">
+        </form>
+
+        <script language="javascript">
+            window.onload = function (){
+                document.getElementById("btn1").onclick = buttonClick;
+                document.getElementById("btn2").onclick=buttonClick;
+                document.getElementById("btn3").onclick=buttonClick;
+            };
+            function buttonClick(e) {
+                var prefix = e.target.value;
+                speak(prefix);
+            }
+            function speak(prefix){
+                var name = document.getElementById('txt1').value;
+                alert(prefix + ' ' + name);
+            }
+        </script>
